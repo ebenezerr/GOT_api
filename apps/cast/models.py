@@ -17,7 +17,7 @@ class House(models.Model):
 
 
 class Character(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     lastname = models.CharField(max_length=100)
     title = models.CharField(max_length=300)
     house = models.ForeignKey(House, null=True, on_delete=models.SET_NULL)
